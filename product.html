@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/2c0f40dad1.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style.css">
+        <title>Market</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="conteiner">
+                <div class="header__content">
+                    <div class="header__left">
+                        <a href="#">
+                            <svg
+                                class="header__logo"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="59px"
+                                height="51px"
+                            >
+                                <image
+                                    x="0px"
+                                    y="0px"
+                                    width="59px"
+                                    height="51px"
+                                    xlink:href="data:img/png;base64,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"
+                                />
+                            </svg>
+                        </a>
+                        <h1 class="header__title">
+                            bran
+                            <span class="header__title--mod">d</span>
+                        </h1>
+                    </div>
+                    <div class="header__search">
+                        <details class="details header__details">
+                            <summary class="details__summary header__summary-heading">Browse</summary>
+                            <div class="mega-menu mega-menu_small mega-menu_shadow header-menu">
+                                <div class="mega-menu__items header-menu_items">
+                                    <div class="mega-menu__item-flex header-menu_item">
+                                        <h3 class="mega-menu__title">women</h3>
+                                        <a href="#" class="mega-menu__link">Dresses</a>
+                                        <a href="#" class="mega-menu__link">Tops</a>
+                                        <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                        <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                        <a href="#" class="mega-menu__link">Blazers</a>
+                                        <a href="#" class="mega-menu__link">Denim</a>
+                                        <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                        <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                        <a href="#" class="mega-menu__link">Accessories</a>
+                                    </div>
+                                    <div class="header-menu_item mega-menu__item-flex">
+                                        <h3 class="mega-menu__title">men</h3>
+                                        <a href="#" class="mega-menu__link">Dresses</a>
+                                        <a href="#" class="mega-menu__link">Tops</a>
+                                        <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                        <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <form action="#" class="header__search_form">
+                            <input type="text" placeholder="Search for Item..." class="header__search_fields">
+                            <button class="header__search_button" type="submit">
+                                <i class="fa fa-solid fa-magnifying-glass header__search_icon"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="header__right">
+                        <div class="header__cart">
+                            <svg
+                                class="header__basket"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="32px"
+                                height="29px"
+                            >
+                                <path fill-rule="evenodd" d="M31.899,7.565 L26.493,19.977 C26.296,20.410 25.882,20.686 25.409,20.686 L10.554,20.686 C10.021,20.686 9.548,20.331 9.410,19.819 L4.577,2.364 L1.184,2.364 C0.533,2.364 -0.000,1.832 -0.000,1.182 C-0.000,0.532 0.533,-0.000 1.184,-0.000 L5.464,-0.000 C5.997,-0.000 6.471,0.354 6.609,0.867 L11.442,18.322 L24.620,18.322 L28.999,8.274 L14.401,8.274 C13.750,8.274 13.217,7.742 13.217,7.092 C13.217,6.442 13.750,5.910 14.401,5.910 L30.814,5.910 C31.208,5.910 31.583,6.107 31.800,6.442 C32.017,6.777 32.057,7.191 31.899,7.565 ZM9.429,23.641 C10.909,23.641 12.112,24.843 12.112,26.320 C12.112,27.798 10.909,28.1000 9.429,28.1000 C7.950,28.1000 6.747,27.798 6.747,26.320 C6.747,24.843 7.950,23.641 9.429,23.641 ZM26.020,23.641 C27.500,23.543 28.782,24.666 28.881,26.124 C28.920,26.852 28.703,27.542 28.230,28.074 C27.756,28.626 27.105,28.941 26.395,28.1000 C26.336,28.1000 26.257,28.1000 26.198,28.1000 C24.797,28.1000 23.633,27.897 23.535,26.498 C23.436,25.040 24.541,23.740 26.020,23.641 Z"/>
+                            </svg>
+                            <div class="header__cart-menu">
+                                <div class="header__cart-menu_items">
+                                    <div class="header__cart-menu_item">
+                                        <img src="./img/header__cart_menu_jpg1.png" alt="photo item" class="header__cart-menu_jpg">
+                                        <div class="header__cart-menu_info">
+                                            <h2 class="header__cart-menu_title">Rebox Zane</h2>
+                                            <img src="./img/menu_cart_stars.png" alt="reiting" class="header__cart-menu_stars">
+                                            <h3 class="header__cart-menu_price">1 x $250</h3>
+                                        </div>
+                                        <div class="header__cart-menu_box">
+                                            <img src="./img/cross.png" alt="cross for delete" class="header__cart-menu_cross">
+                                        </div>
+                                    </div>
+                                    <div class="header__cart-menu_item">
+                                        <img src="./img/header__cart_menu_jpg2.png" alt="photo item" class="header__cart-menu_jpg">
+                                        <div class="header__cart-menu_info">
+                                            <h2 class="header__cart-menu_title">Rebox Zane</h2>
+                                            <img src="./img/menu_cart_stars.png" alt="reiting" class="header__cart-menu_stars">
+                                            <h3 class="header__cart-menu_price">1 x $250</h3>
+                                        </div>
+                                        <div class="header__cart-menu_box">
+                                            <img src="./img/cross.png" alt="cross for delete" class="header__cart-menu_cross">
+                                        </div>
+                                    </div>
+                                    <div class="header__cart-menu_total">
+                                        <h3 class="header__cart-menu_text">total</h3>
+                                        <h3 class="header__cart-menu_text">$500.00</h3>
+                                    </div>
+                                    <div class="header__cart-menu_buttons">
+                                        <a class="header__cart-menu_button" href="#">checkout</a>
+                                        <a class="header__cart-menu_button" href="#">go to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <details class="header__button_account">
+                            <summary class="header__heading_button buttons">My Account</summary>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <div class="conteiner">
+                <ul class="nav__lincs">
+                    <li class="nav__list">
+                        <a href="./index.html" class="nav__linc">home</a>
+                    </li>
+                    <li class="nav__list">
+                        <a href="#" class="nav__linc nav__linc--border-color">man</a>
+                        <div class="mega-menu mega-menu_shadow nav__mega-menu">
+                            <div class="mega-menu__items">
+                                <div class="mega-menu__item1 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                    <a href="#" class="mega-menu__link">Blazers</a>
+                                    <a href="#" class="mega-menu__link">Denim</a>
+                                    <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                    <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                    <a href="#" class="mega-menu__link">Accessories</a>
+                                </div>
+                                <div class="mega-menu__item2 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item3 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item4 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                </div>
+                                <div class="mega-menu__item5 mega-menu__item-flex">
+                                    <img class="mega-menu__item5-img" src="./img/mega-menu__img.png" alt="mega img">
+                                    <h3 class="mega-menu__item5-img--supersale">super sale!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__list">
+                        <a href="#" class="nav__linc">women</a>
+                        <div class="mega-menu mega-menu_shadow nav__mega-menu">
+                            <div class="mega-menu__items">
+                                <div class="mega-menu__item1 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                    <a href="#" class="mega-menu__link">Blazers</a>
+                                    <a href="#" class="mega-menu__link">Denim</a>
+                                    <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                    <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                    <a href="#" class="mega-menu__link">Accessories</a>
+                                </div>
+                                <div class="mega-menu__item2 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item3 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item4 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                </div>
+                                <div class="mega-menu__item5 mega-menu__item-flex">
+                                    <img class="mega-menu__item5-img" src="./img/mega-menu__img.png" alt="mega img">
+                                    <h3 class="mega-menu__item5-img--supersale">super sale!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__list">
+                        <a href="#" class="nav__linc">kids</a>
+                        <div class="mega-menu mega-menu_shadow nav__mega-menu">
+                            <div class="mega-menu__items">
+                                <div class="mega-menu__item1 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                    <a href="#" class="mega-menu__link">Blazers</a>
+                                    <a href="#" class="mega-menu__link">Denim</a>
+                                    <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                    <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                    <a href="#" class="mega-menu__link">Accessories</a>
+                                </div>
+                                <div class="mega-menu__item2 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item3 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item4 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                </div>
+                                <div class="mega-menu__item5 mega-menu__item-flex">
+                                    <img class="mega-menu__item5-img" src="./img/mega-menu__img.png" alt="mega img">
+                                    <h3 class="mega-menu__item5-img--supersale">super sale!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__list">
+                        <a href="#" class="nav__linc">accoseriese</a>
+                        <div class="mega-menu mega-menu_shadow nav__mega-menu">
+                            <div class="mega-menu__items">
+                                <div class="mega-menu__item1 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                    <a href="#" class="mega-menu__link">Blazers</a>
+                                    <a href="#" class="mega-menu__link">Denim</a>
+                                    <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                    <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                    <a href="#" class="mega-menu__link">Accessories</a>
+                                </div>
+                                <div class="mega-menu__item2 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item3 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item4 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                </div>
+                                <div class="mega-menu__item5 mega-menu__item-flex">
+                                    <img class="mega-menu__item5-img" src="./img/mega-menu__img.png" alt="mega img">
+                                    <h3 class="mega-menu__item5-img--supersale">super sale!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__list nav__list--last">
+                        <a href="#" class="nav__linc">featured</a>
+                        <div class="mega-menu mega-menu_shadow nav__mega-menu">
+                            <div class="mega-menu__items">
+                                <div class="mega-menu__item1 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                    <a href="#" class="mega-menu__link">Blazers</a>
+                                    <a href="#" class="mega-menu__link">Denim</a>
+                                    <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                    <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                    <a href="#" class="mega-menu__link">Accessories</a>
+                                </div>
+                                <div class="mega-menu__item2 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item3 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item4 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                </div>
+                                <div class="mega-menu__item5 mega-menu__item-flex">
+                                    <img class="mega-menu__item5-img" src="./img/mega-menu__img.png" alt="mega img">
+                                    <h3 class="mega-menu__item5-img--supersale">super sale!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__list nav__list--last">
+                        <a href="#" class="nav__linc">hot deals</a>
+                        <div class="mega-menu mega-menu_shadow nav__mega-menu">
+                            <div class="mega-menu__items">
+                                <div class="mega-menu__item1 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                    <a href="#" class="mega-menu__link">Blazers</a>
+                                    <a href="#" class="mega-menu__link">Denim</a>
+                                    <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                    <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                    <a href="#" class="mega-menu__link">Accessories</a>
+                                </div>
+                                <div class="mega-menu__item2 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item3 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                    <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                </div>
+                                <div class="mega-menu__item4 mega-menu__item-flex">
+                                    <h3 class="mega-menu__title">women</h3>
+                                    <a href="#" class="mega-menu__link">Dresses</a>
+                                    <a href="#" class="mega-menu__link">Tops</a>
+                                    <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                </div>
+                                <div class="mega-menu__item5 mega-menu__item-flex">
+                                    <img class="mega-menu__item5-img" src="./img/mega-menu__img.png" alt="mega img">
+                                    <h3 class="mega-menu__item5-img--supersale">super sale!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section class="top">
+            <div class="conteiner">
+                <div class="top_box">
+                    <h1 class="top_title">new arrivals</h1>
+                    <div class="top_path">
+                        <div class="top_path-item">
+                            <a href="#" class="top_path-link">home</a>
+                            <a href="#" class="top_path-link">man</a>
+                            <a href="#" class="top_path-link">new arrivals</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="catalog">
+            <div class="conteiner">
+                <div class="catalog-box">
+                    <div class="catalog-left">
+                        <details class="details catalog-details">
+                            <summary class="details__summary catalog-summary">Category</summary>
+                            <div class="mega-menu mega-menu_small catalog-menu">
+                                <div class="mega-menu__items header-menu_items">
+                                    <div class="mega-menu__item-flex header-menu_item  catalog-items">
+                                        <a href="#" class="mega-menu__link">Dresses</a>
+                                        <a href="#" class="mega-menu__link">Tops</a>
+                                        <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                        <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                        <a href="#" class="mega-menu__link">Blazers</a>
+                                        <a href="#" class="mega-menu__link">Denim</a>
+                                        <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                        <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                        <a href="#" class="mega-menu__link">Accessories</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="details catalog-details">
+                            <summary class="details__summary catalog-summary">BRAND</summary>
+                            <div class="mega-menu mega-menu_small catalog-menu">
+                                <div class="mega-menu__items header-menu_items">
+                                    <div class="mega-menu__item-flex header-menu_item  catalog-items">
+                                        <a href="#" class="mega-menu__link">Dresses</a>
+                                        <a href="#" class="mega-menu__link">Tops</a>
+                                        <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                        <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                        <a href="#" class="mega-menu__link">Blazers</a>
+                                        <a href="#" class="mega-menu__link">Denim</a>
+                                        <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                        <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                        <a href="#" class="mega-menu__link">Accessories</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="details catalog-details">
+                            <summary class="details__summary catalog-summary">dESIGNER</summary>
+                            <div class="mega-menu mega-menu_small catalog-menu">
+                                <div class="mega-menu__items header-menu_items">
+                                    <div class="mega-menu__item-flex header-menu_item  catalog-items">
+                                        <a href="#" class="mega-menu__link">Dresses</a>
+                                        <a href="#" class="mega-menu__link">Tops</a>
+                                        <a href="#" class="mega-menu__link">Sweaters/Knits</a>
+                                        <a href="#" class="mega-menu__link">Jackets/Coats</a>
+                                        <a href="#" class="mega-menu__link">Blazers</a>
+                                        <a href="#" class="mega-menu__link">Denim</a>
+                                        <a href="#" class="mega-menu__link">Leggings/Pants</a>
+                                        <a href="#" class="mega-menu__link">Skirts/Shorts</a>
+                                        <a href="#" class="mega-menu__link">Accessories</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="catalog-right">
+                        <div class="catalog-filter">
+                            <div class="catalog-trending">
+                                <h2 class="catalog-filter-heading">trending now</h2>
+                                <ul class="catalog-trending-elements">
+                                    <li class="catalog-trending-element">Bohemian</li>
+                                    <li class="catalog-trending-element">Floral</li>
+                                    <li class="catalog-trending-element">Lace</li>
+                                    <li class="catalog-trending-element">Floral</li>
+                                    <li class="catalog-trending-element">Lace</li>
+                                    <li class="catalog-trending-element">Bohemian</li>
+                                </ul>
+                            </div>
+                            <div class="catalog-size">
+                                <h2 class="catalog-filter-heading">size</h2>
+                                <form action="#" class="form catalog-form">
+                                    <label for="filter-checkbox-size1" class="catalog-form-text">
+                                        <input type="checkbox" id="filter-checkbox-size1" class="catalog-size-checkbox">XXS
+                                    </label>
+                                    <label for="filter-checkbox-size2" class="catalog-form-text">
+                                        <input type="checkbox" id="filter-checkbox-size2" class="catalog-size-checkbox">XS
+                                    </label>
+                                    <label for="filter-checkbox-size3" class="catalog-form-text">
+                                        <input type="checkbox" id="filter-checkbox-size3" class="catalog-size-checkbox">S
+                                    </label>
+                                    <label for="filter-checkbox-size4" class="catalog-form-text">
+                                        <input type="checkbox" id="filter-checkbox-size4" class="catalog-size-checkbox">M
+                                    </label>
+                                    <label for="filter-checkbox-size5" class="catalog-form-text">
+                                        <input type="checkbox" id="filter-checkbox-size5" class="catalog-size-checkbox">L
+                                    </label>
+                                    <label for="filter-checkbox-size6" class="catalog-form-text">
+                                        <input type="checkbox" id="filter-checkbox-size6" class="catalog-size-checkbox">XL
+                                    </label>
+                                    <label for="filter-checkbox-size7" class="catalog-form-text">
+                                        <input type="checkbox" id="filter-checkbox-size7" class="catalog-size-checkbox">XXL
+                                    </label>
+                                  
+                                </form>
+                            </div>
+                            <div class="catalog-price">
+                                <h2 class="catalog-filter-heading">price</h2>
+                                <input type="range" class="catalog-price-range" min="52" max="400" value="80">
+                            </div>
+                        </div>
+                        <div class="catalog__items">
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img1.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img2.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img3.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img4.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img5.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img6.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img7.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img8.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                            <a href="#" class="catalog__item">
+                                <img src="./img/catalog__item_img8.png" alt="catalog item" class="catalog__item_img">
+                                <div class="catalog__item_img--hover">
+                                    <div class="catalog__item_img--hover_details">
+                                        <svg
+                                            class="catalog__item_img--hover_basket"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="33px"
+                                            height="32px"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                stroke-width=".1px"
+                                                stroke="rgb(255, 255, 255)"
+                                                fill="rgb(255, 255, 255)"
+                                                d="M27.927,10.739 L24.042,20.155 C23.900,20.484 23.603,20.693 23.262,20.693 L12.586,20.693 C12.203,20.693 11.862,20.424 11.763,20.035 L8.289,6.793 L5.851,6.793 C5.383,6.793 4.1000,6.390 4.1000,5.897 C4.1000,5.403 5.383,4.1000 5.851,4.1000 L8.928,4.1000 C9.310,4.1000 9.651,5.269 9.750,5.657 L13.224,18.899 L22.695,18.899 L25.843,11.277 L15.351,11.277 C14.883,11.277 14.500,10.873 14.500,10.380 C14.500,9.887 14.883,9.484 15.351,9.484 L27.147,9.484 C27.431,9.484 27.700,9.633 27.856,9.887 C28.012,10.141 28.041,10.455 27.927,10.739 ZM11.777,22.935 C12.841,22.935 13.706,23.846 13.706,24.967 C13.706,26.088 12.841,26.1000 11.777,26.1000 C10.714,26.1000 9.849,26.088 9.849,24.967 C9.849,23.846 10.714,22.935 11.777,22.935 ZM23.702,22.935 C24.765,22.860 25.687,23.712 25.758,24.818 C25.786,25.371 25.630,25.894 25.290,26.298 C24.950,26.716 24.482,26.955 23.971,26.1000 C23.929,26.1000 23.872,26.1000 23.830,26.1000 C22.823,26.1000 21.986,26.163 21.915,25.102 C21.845,23.996 22.639,23.009 23.702,22.935 Z"
+                                            />
+                                        </svg>
+                                        <p class="catalog__item_img--hover_text">Add to Cart</p>
+                                    </div>
+                                </div>
+                                <div class="catalog__item_details">
+                                    <h2 class="catalog__item_title">mango people t-shirt</h2>
+                                    <h2 class="catalog__item_price">$52.00</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="advertising">
+            <div class="conteiner">
+                <div class="advertising__content">
+                    <div class="advertising__left">
+                        <img src="./img/advertising_block.png" alt="advertising photo" class="advertising__left_img">
+                        <div class="advertising__left_text">
+                            <h2 class="advertising__left_title">
+                                30%
+                                <span class="advertising__left_title--mod">offer</span>
+                            </h2>
+                            <h2 class="advertising__left_subtitle">for woman</h2>
+                        </div>
+                    </div>
+                    <div class="advertising__right">
+                        <div class="advertising__right_item">
+                            <img src="./img/advertising_item1.png" alt="icon" class="advertising__right_img">
+                            <div class="advertising__right_text">
+                                <h2 class="advertising__right_heading">Fre Delivery</h2>
+                                <p class="advertising__right_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                            </div>
+                        </div>
+                        <div class="advertising__right_item">
+                            <img src="./img/advertising_item2.png" alt="icon" class="advertising__right_img">
+                            <div class="advertising__right_text">
+                                <h2 class="advertising__right_heading">Sales & discounts</h2>
+                                <p class="advertising__right_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                            </div>
+                        </div>
+                        <div class="advertising__right_item">
+                            <img src="./img/advertising_item3.png" alt="icon" class="advertising__right_img">
+                            <div class="advertising__right_text">
+                                <h2 class="advertising__right_heading">Quality assurance</h2>
+                                <p class="advertising__right_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="subscribe">
+            <div class="conteiner">
+                <div class="subscribe__box">
+                    <div class="subscribe__left">
+                        <img src="./img/footer_left.png" alt="photo aftors" class="subscribe__left_image">
+                        <div class="subscribe__left_about">
+                            <p class="subscribe__left_text">
+                                “Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
+                                    a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+                            </p>
+                            <h3 class="subscribe__left_name">Bin Burhan</h3>
+                            <p class="subscribe__left_adress">Dhaka, Bd</p>
+                            <div class="subscribe__left_slider subscribe__left_slider--left subscribe__left_slider--right"></div>
+                        </div>
+                    </div>
+                    <div class="subscribe__right">
+                        <div class="subscribe__right_box">
+                            <h2 class="subscribe__right_title">subscribe</h2>
+                            <h2 class="subscribe__right_subtitle">FOR OUR NEWLETTER AND PROMOTION</h2>
+                        </div>
+                        <form action="#" class="subscribe__right_form">
+                            <input type="email" placeholder="Enter Your Email" class="subscribe__right_email">
+                            <button class="subscribe__right_button buttons" type="submit">
+                                <i class="subscribe__right_button_title">Subscribe</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <section class="footer-white">
+                <div class="conteiner">
+                    <div class="footer-box">
+                        <div class="footer-logo">
+                            <div class="footer-logo-title">
+                                <a href="#">
+                                    <svg
+                                        class="header__logo"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="59px"
+                                        height="51px"
+                                    >
+                                        <image
+                                            x="0px"
+                                            y="0px"
+                                            width="59px"
+                                            height="51px"
+                                            xlink:href="data:img/png;base64,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"
+                                        />
+                                    </svg>
+                                </a>
+                                <h2 class="header__title">
+                                    bran
+                                    <span class="header__title--mod">d</span>
+                                </h2>
+                            </div>
+                            <p class="footer-text">
+                                Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.
+                            </p>
+                            <p class="footer-text">
+                                Efficiently plagiarize 24/365 action items and focused infomediaries.Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+                            </p>
+                        </div>
+                        <div class="footer-company">
+                            <h2 class="footer-title">company</h2>
+                            <ul class="footer-links">
+                                <li class="footer-link">Home</li>
+                                <li class="footer-link">Shop</li>
+                                <li class="footer-link">About</li>
+                                <li class="footer-link">How It Works</li>
+                                <li class="footer-link">Contact</li>
+                            </ul>
+                        </div>
+                        <div class="footer-information">
+                            <h2 class="footer-title">information</h2>
+                            <ul class="footer-links">
+                                <li class="footer-link">Teams & Condition</li>
+                                <li class="footer-link">Privacy Policy</li>
+                                <li class="footer-link">How to Buy</li>
+                                <li class="footer-link">How to Sell</li>
+                                <li class="footer-link">Promotion</li>
+                            </ul>
+                        </div>
+                        <div class="footer-category">
+                            <h2 class="footer-title">shop category</h2>
+                            <ul class="footer-links">
+                                <li class="footer-link">Men</li>
+                                <li class="footer-link">Women</li>
+                                <li class="footer-link">Child</li>
+                                <li class="footer-link">Apparel</li>
+                                <li class="footer-link">Brows All</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="footer-grey">
+                <div class="conteiner">
+                    <div class="footer-grey-box">
+                        <p class="footer-copirate">© 2017 Brand All Rights Reserved.</p>
+                        <div class="footer-box-social">
+                            <a href="#" class="footer-soc-link">
+                                <i class="hover footer-icon fa fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="footer-soc-link">
+                                <i class="footer-icon fa fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="#" class="footer-soc-link">
+                                <i class="footer-icon fa fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="footer-soc-link">
+                                <i class="footer-icon fa fa-pinterest-p"></i>
+                            </a>
+                            <a href="#" class="footer-soc-link">
+                                <i class="footer-icon fa fa-brands fa-google-plus-g"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
